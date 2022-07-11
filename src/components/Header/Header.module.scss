@@ -1,0 +1,42 @@
+@use '../../styles/_screen';
+
+.head {
+    padding: 0 25px;
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--back);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 10;
+    transition: 0.8s transform ;
+    top: 0px;
+}
+
+.svgCode {
+    height: 2rem;
+    color: var(--slate);
+    will-change: transform;
+    animation: anim 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @keyframes anim {
+        0% {transform: rotate(10deg);}
+        50% {transform: rotate(-10deg);}
+        100% {transform: rotate(10deg);}
+    }
+}
+
+.svgSideBar {
+    color: var(--slate);
+    height: 2rem;
+    transition: var(--transition);
+    z-index: 12;
+
+    @include screen.devices(mobile) {
+        display: none;
+    }
+}
