@@ -1,0 +1,16 @@
+.main {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 22;
+    transition: var(--transition-fast) ease-out;
+    background-color: var(--light-back);
+
+    &__show {
+        width: 300px;
+    }
+    &__hide{
+        width: 0;
+    }
+}

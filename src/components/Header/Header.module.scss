@@ -3,16 +3,11 @@
 .head {
     padding: 0 25px;
     height: 70px;
-    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--back);
     backdrop-filter: blur(10px);
-    position: fixed;
-    z-index: 10;
     transition: 0.8s transform ;
-    top: 0px;
 }
 
 .svgCode {
@@ -33,10 +28,15 @@
 .svgSideBar {
     color: var(--slate);
     height: 2rem;
+    z-index: 33;
     transition: var(--transition);
-    z-index: 12;
-
+    position: sticky;
+    &:hover {
+        color: var(--dim-slate);
+        cursor: pointer;
+    }
     @include screen.devices(mobile) {
         display: none;
     }
+
 }

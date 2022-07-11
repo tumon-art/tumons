@@ -1,5 +1,21 @@
+:root {
+  --back: #09192f;
+  --light-back: #112240;
+  --slate: #64ffda;
+  --dim-slate: #27cca5;
+  --lighttest: #ccd6f6;
+  --dim: #8892b0;
+  --dim-light: #a8b4d3;
+  --transition-fast:0.1s;
+  --transition:0.1s;
+  --fz-heading: 25px;
+  --fz-md: 16px;
+  --fz-xl: 18px;
+}
+
 html,
 body {
+  background-color: var(--back);
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -15,15 +31,4 @@ a {
   box-sizing: border-box;
 }
 
-:root {
-  --back: #09192f;
-  --slate: #64ffda;
-  --lighttest: #ccd6f6;
-  --dim: #8892b0;
-  --dimlight: #a8b4d3;
-  --transition:0.2s;
-  --fz-heading: 25px;
-  --fz-md: 16px;
-  --fz-xl: 18px;
-}
 
