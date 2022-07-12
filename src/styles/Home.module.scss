@@ -1,4 +1,7 @@
 .container {
   padding: 0 2rem;
-  background-color: var(--slate);
+  color: var(--slate);
+  font-family: 'Press Start 2P';
+  text-rendering: optimizeLegibility;
+  font-size: 0.8em;
 }
