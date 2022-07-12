@@ -23,6 +23,7 @@
     padding: 0;
     display: flex;
     color: var(--dim-light);
+    counter-reset: item;
 
     li {
         font-size: 1.2rem;
@@ -30,10 +31,15 @@
         display: flex;
         margin: 0 1.5rem;
         text-align: center;
+        transition: var(--transition);
 
         &:hover {
             color: var(--slate);
             cursor: pointer;
+            outline: 1px solid var(--dim);
+            outline-offset: 0.5rem;
+            outline-style: dashed;
+
         }
 
         &::before {
