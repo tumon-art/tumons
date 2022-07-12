@@ -1,9 +1,15 @@
+@use '../../styles/screen';
+
 .main {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     height: 100vh;
+
+    @include screen.devices(mobile) {
+        display: flex;
+    }
 }
 
 .nav {
@@ -22,7 +28,7 @@
         font-size: 1.2rem;
         margin: 30px 0;
         display: flex;
-        margin: 0 2rem;
+        margin: 0 1.5rem;
         text-align: center;
 
         &:hover {
@@ -35,7 +41,7 @@
             counter-increment: item;
             content: '0' counter(item) '.';
             display: block;
-            margin-bottom: 10px;
+            margin-right: 10px;
         }
     }
 }
