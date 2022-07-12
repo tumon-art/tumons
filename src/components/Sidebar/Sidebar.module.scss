@@ -1,3 +1,5 @@
+@use '../../styles/screen';
+
 .main {
     position: absolute;
     right: 0;
@@ -11,7 +13,10 @@
         width: 300px;
     }
     &__hide{
-        // transform: translateX(300px);
+        width: 0;
+    }
+
+    @include screen.devices(mobile) {
         width: 0;
     }
 }
