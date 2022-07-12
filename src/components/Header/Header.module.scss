@@ -31,6 +31,7 @@
     z-index: 33;
     transition: var(--transition);
     position: sticky;
+    
     &:hover {
         color: var(--dim-slate);
         cursor: pointer;
@@ -38,5 +39,6 @@
     @include screen.devices(mobile) {
         display: none;
     }
+
 
 }

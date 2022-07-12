@@ -1,0 +1,38 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ol {
+    list-style: none;
+    padding: 0;
+    color: var(--dim-light);
+
+    li {
+        font-size: 1.2rem;
+        margin: 30px 0;
+        text-align: center;
+
+        &:hover {
+            color: var(--slate);
+            cursor: pointer;
+        }
+
+        &::before {
+            color: var(--dim-slate);
+            counter-increment: item;
+            content: '0' counter(item) '.';
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}

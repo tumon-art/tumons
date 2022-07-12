@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <>
     <div className={styles.container}>
-      How are you
     </div>
     </>
   )
