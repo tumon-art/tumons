@@ -1,6 +1,35 @@
 .main {
     min-width: 200px;
-    border: 3px solid var(--dim-slate);
     height: 230px;
+    border-radius: var(--low-redius);
     background-color: var(--light-back);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        text-align: center;
+        font-size: 1rem;
+    }
+    h4 {
+        text-align: center;
+        word-wrap: break-word;
+        padding: 0 1rem;
+        margin: 0.5em 0;
+    }
+
+}
+
+.footer {
+    margin: 2em 4.7em;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imgHold {
+    position: relative;
+    width: 10px;
+    color: var(--slate);
 }

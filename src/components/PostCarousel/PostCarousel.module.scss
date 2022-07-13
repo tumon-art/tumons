@@ -1,5 +1,61 @@
 .main {
+    position: relative;
+}
+
+.svgL {
+    position: absolute;
+    height: 3em;
+    width: 3rem;
+    left: -50px;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    transition: var(--transition);
+    &:hover {
+        cursor: pointer;
+        color: var(--dim-slate);
+    }
+}
+
+.svgR {
+    position: absolute;
+    height: 3em;
+    width: 3rem;
+    right: -50px;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    transition: var(--transition);
+    &:hover {
+        cursor: pointer;
+        color: var(--dim-slate);
+    }
+}
+
+.carouselHold {
     display: flex;
     gap: 1em;
-    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    padding: 0 0 3px 0;
+    
+
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--back); 
+    }
+    
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--dim); 
+        border-radius: 13px;
+    }
+    
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--dim-slate); 
+    }
 }
