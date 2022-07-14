@@ -1,5 +1,6 @@
 .main {
     position: relative;
+    box-shadow: inset;
 }
 
 .svgL {
@@ -41,7 +42,7 @@
     
 
     &::-webkit-scrollbar {
-        height: 6px;
+        height: 0px;
     }
 
     &::-webkit-scrollbar-track {

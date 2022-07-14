@@ -1,35 +1,43 @@
 .main {
     min-width: 200px;
-    height: 230px;
+    min-height: 200px;
     border-radius: var(--low-redius);
     background-color: var(--light-back);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: var(--dim);
+    position: relative;
+    border: 5px solid var(--ash-dim);
 
     p {
         text-align: center;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
-    h4 {
+    h3 {
         text-align: center;
         word-wrap: break-word;
         padding: 0 1rem;
         margin: 0.5em 0;
     }
-
-}
-
-.footer {
-    margin: 2em 4.7em;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
+    footer {
+        font-size: 0.9rem;
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
 }
 
 .imgHold {
     position: relative;
-    width: 10px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--dim);
+    overflow: hidden;
     color: var(--slate);
 }
