@@ -24,6 +24,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: monospace;
+  // font-family: 'Secular One', sans-serif;
 
   @include screen.devices(desktop) {
     padding: 0px 50px;

@@ -1,0 +1,40 @@
+.main {
+    margin: 2em 0;
+    h3 {
+        font-family: 'Secular One', sans-serif;
+        color: var(--dim-light);
+        padding: 0 2em;
+    }
+}
+
+.imgHold {
+    position: relative;
+    max-height: 220px;
+    width: 100%;
+    filter: contrast(2) grayscale(2) blur(2px);
+    background-color: var(--dim);
+    overflow: hidden;
+    color: var(--slate);
+}
+
+
+.authorInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--dim);
+    font-weight: 700;
+}
+
+.imgHoldAuthor {
+    position: relative;
+    width:1.4em;
+    border-radius: 50%;
+    background-color: var(--dim);
+}
+
+.svgCalander {
+    height:1.4em;
+    color: var(--dim);
+}
