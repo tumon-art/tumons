@@ -8,6 +8,8 @@
     align-items: center;
     backdrop-filter: blur(10px);
     transition: 0.8s transform ;
+    border-bottom: 2px solid var(--light-back);
+    margin-bottom: 30px;
 }
 
 .svgCode {
