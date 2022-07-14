@@ -1,3 +1,5 @@
+@use '../../styles/screen';
+
 .main {
     position: relative;
     box-shadow: inset;
@@ -8,32 +10,42 @@
 
 .svgL {
     position: absolute;
-    display: flex;
+    display: none;
     align-items: center;
     z-index: 2;
-    left: -50px;
+    left: -30px;
     color: var(--dim);
     top: 0;
     bottom: 0;
     font-size: 6em;
     transition: var(--transition);
+
     &:hover {
         cursor: pointer;
         color: var(--dim-light);
+    }
+
+    @include screen.devices(mobile) {
+        display: flex;
     }
 }
 
 .svgR {
     position: absolute;
-    display: flex;
+    display: none;
     align-items: center;
     z-index: 2;
-    right: -50px;
+    right: -30px;
     top: 0;
     color: var(--dim);
     bottom: 0;
     font-size: 6em;
     transition: var(--transition);
+
+    @include screen.devices(mobile) {
+        display: flex;
+    }
+
     &:hover {
         cursor: pointer;
         color: var(--dim-light);
