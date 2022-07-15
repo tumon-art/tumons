@@ -48,10 +48,7 @@ const Post = ({ post }) => {
 
         <p>{time}</p>
         </span>
-
-
-
-
+        
       </div>
 
     </div>

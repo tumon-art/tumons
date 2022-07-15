@@ -16,7 +16,7 @@ export default function Home({posts}) {
         <PostCarousel posts={posts} />
       </div>
 
-      <div>
+      <div className={styles.MainContNrecentPost}>
         <ShowPost posts={showPost} />
         <RecentPost posts={recentPost} />
       </div>
