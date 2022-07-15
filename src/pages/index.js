@@ -2,7 +2,7 @@ import { client } from '../lib/client'
 import styles from '../styles/Home.module.scss'
 import PostCarousel from '../components/PostCarousel/PostCarousel';
 import ShowPost from '../components/Post/ShowPost';
-import RecentPost from '../components/RecentPost/RecentPost';
+import RecentPosts from '../components/RecentPosts/RecentPosts';
 
 export default function Home({posts}) {
 
@@ -18,7 +18,7 @@ export default function Home({posts}) {
 
       <div className={styles.MainContNrecentPost}>
         <ShowPost posts={showPost} />
-        <RecentPost posts={recentPost} />
+        <RecentPosts posts={recentPost} />
       </div>
     </div>
     </>

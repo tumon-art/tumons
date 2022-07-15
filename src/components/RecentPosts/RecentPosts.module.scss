@@ -1,0 +1,18 @@
+.main {
+    padding: 1.2em;
+    background-color: var(--light-back);
+    border-radius: var(--low-redius);
+    position: -webkit-sticky;
+    position: sticky;
+    height: 300px;
+    width: 300px;
+    top: 0;
+
+    p {
+        font-size: 1.2em;
+        margin: 0;
+        color: var(--dim-slate);
+        font-weight: 600;
+        font-family: 'Secular One', sans-serif;
+    }
+}
