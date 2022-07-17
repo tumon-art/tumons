@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.scss'
 import PostCarousel from '../components/PostCarousel/PostCarousel';
 import ShowPost from '../components/Post/ShowPost';
 import RecentPosts from '../components/RecentPosts/RecentPosts';
+import Category from '../components/CategoryCard/Category';
 
 export default function Home({posts}) {
 
@@ -18,7 +19,10 @@ export default function Home({posts}) {
 
       <div className={styles.MainContNrecentPost}>
         <ShowPost posts={showPost} />
-        <RecentPosts posts={recentPost} />
+       <div className={styles.Card}>
+       <RecentPosts posts={recentPost} />
+        <Category />
+       </div>
       </div>
     </div>
     </>

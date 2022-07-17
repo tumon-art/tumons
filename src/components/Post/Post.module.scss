@@ -3,10 +3,11 @@
     background-color: var(--light-back);
     border-radius: var(--low-redius);
     padding: 1.2em;
+
     h3 {
-        font-family: 'Secular One', sans-serif;
-        color: var(--dim-light);
         padding: 0 2em;
+        font-family: 'Secular One';
+        color: var(--dim-light);
     }
 }
 
