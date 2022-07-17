@@ -1,5 +1,30 @@
-
-
+.main {
+    margin-top: 1em;
+}
 .ImgNtitleHold {
     display: flex;
+    justify-content: left;
+    gap: 1em;
+    align-items: center;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.time {
+    margin: 0 0 0.3em 0;
+    color: var(--dim);
+    font-size: 0.8em;
+}
+.title {
+    margin: 0;
+    color: var(--dim-light);
+     
+    &:hover {
+        color: var(--dim-slate);
+        cursor: pointer;
+    }
 }

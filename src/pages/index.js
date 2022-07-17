@@ -6,7 +6,7 @@ import RecentPosts from '../components/RecentPosts/RecentPosts';
 
 export default function Home({posts}) {
 
-  const recentPost = posts.slice(0,2)
+  const recentPost = posts.slice(0,3)
   const showPost = posts.slice(0,4)
 
   return (
