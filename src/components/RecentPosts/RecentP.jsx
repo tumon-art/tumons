@@ -7,7 +7,7 @@ import { client } from '../../lib/client';
 const RecentP = ({post}) => {
   const { mainImage, title,_updatedAt} = post;
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
-  const time = moment(_updatedAt).format("ll")
+  const time = moment(_updatedAt).format("l")
 
   return (
    <div className={styles.main}>
