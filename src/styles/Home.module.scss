@@ -13,6 +13,11 @@
 }
 
 .Card {
-  display: grid;
-  gap: 2;
+  display: flex;
+  height: 800px;
+  flex-direction: column;
+  row-gap: 3em;
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
 }
