@@ -5,7 +5,7 @@ import ShowPost from '../components/Post/ShowPost';
 import RecentPosts from '../components/RecentPosts/RecentPosts';
 import Category from '../components/CategoryCard/Category';
 
-export default function Home({posts}) {
+export default function Home({posts,category}) {
 
   const recentPost = posts.slice(0,3)
   const showPost = posts.slice(0,4)
@@ -21,7 +21,7 @@ export default function Home({posts}) {
         <ShowPost posts={showPost} />
        <div className={styles.Card}>
        <RecentPosts posts={recentPost} />
-        <Category />
+        <Category category={category} />
        </div>
       </div>
     </div>
@@ -38,17 +38,22 @@ export const getServerSideProps = async () => {
     slug,
     title,
     mainImage,
+    categories,
     author -> {
     name,
     image
   }
   }`;
 
-  const posts = await client.fetch(query);
+  const category = `*[_type == "category"]{
+    title,}`;
 
+  const posts = await client.fetch(query);
+  const cat = await client.fetch(category);
   return {
     props: {
-      posts,
+      posts : posts,
+      category: cat
     }
   }
 }
