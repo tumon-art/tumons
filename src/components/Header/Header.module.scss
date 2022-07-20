@@ -1,7 +1,7 @@
 @use '../../styles/_screen';
 
 .head {
-    padding: 0 25px;
+    padding: 0 0.4rem;
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -9,6 +9,10 @@
     transition: 0.8s transform ;
     border-bottom: 2px solid var(--light-back);
     margin-bottom: 30px;
+
+    @include screen.devices(mobile){
+        padding: 0 2rem;
+    }
 }
 
 .svgCode {

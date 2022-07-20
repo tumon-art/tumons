@@ -1,8 +1,14 @@
+@use './screen';
+
 .container {
-  padding: 0 2rem;
+  padding: 0 0.4rem;
   color: var(--slate);
   font-family: monospace;
   text-rendering: optimizeLegibility;
+
+  @include screen.devices(mobile){
+    padding: 0 2rem;
+  }
 }
 
 .MainContNrecentPost {

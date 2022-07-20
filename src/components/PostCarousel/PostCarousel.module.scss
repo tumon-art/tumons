@@ -2,22 +2,27 @@
 
 .main {
     position: relative;
-    box-shadow: inset;
-    border: 5px solid var(--ash-dim);
-    padding: 1em;
-    border-radius: 13px 13px;
+    overflow: hidden;
+
+    @include screen.devices(mobile) {
+        box-shadow: inset;
+        border-radius: 13px 13px;
+        padding: 1em;
+        border: 5px solid var(--ash-dim);
+    }
 }
 
 .svgL {
     position: absolute;
     display: none;
+    background-color: var(--fog);
     align-items: center;
     z-index: 2;
-    left: -30px;
+    left: 0px;
     color: var(--dim);
     top: 0;
     bottom: 0;
-    font-size: 6em;
+    font-size: 5em;
     transition: var(--transition);
 
     &:hover {
@@ -34,12 +39,13 @@
     position: absolute;
     display: none;
     align-items: center;
+    background-color: var(--fog);
     z-index: 2;
-    right: -30px;
+    right: 0px;
     top: 0;
     color: var(--dim);
     bottom: 0;
-    font-size: 6em;
+    font-size: 5em;
     transition: var(--transition);
 
     @include screen.devices(mobile) {
