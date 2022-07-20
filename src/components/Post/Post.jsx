@@ -30,6 +30,7 @@ const Post = ({ post }) => {
         <p>{author.name}</p>
         </span>
 
+
         {/* === CALANDER AND DATE  */}
         <span>
         <svg
