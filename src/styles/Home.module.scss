@@ -12,10 +12,14 @@
 }
 
 .MainContNrecentPost {
-  display: flex;
+  display: block;
   justify-content: space-between;
   margin: 5em 0;
   position: relative;
+
+  @include screen.devices(mobile){
+    display: flex;
+  }
 }
 
 .Card {

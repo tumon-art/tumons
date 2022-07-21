@@ -1,9 +1,14 @@
+@use '../../styles/screen';
+
 .main {
     padding: 1.2em;
     background-color: var(--light-back);
     border-radius: var(--low-redius);
     height: 240px;
-    width: 300px;
+
+    @include screen.devices(mobile){
+        width: 300px;
+    }
 
     h3 {
         margin: 0;
