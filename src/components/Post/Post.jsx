@@ -9,7 +9,7 @@ const Post = ({ post }) => {
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
   const imageAuthor = useNextSanityImage(client, author.image.asset._ref);
 
-
+  const desc = post.body[0].children[0].text.split('.')
   const time = moment(_updatedAt).format('ll')
 
   return (
@@ -49,8 +49,16 @@ const Post = ({ post }) => {
 
         <p>{time}</p>
         </span>
+
         
       </div>
+        
+        <div className={styles.descNbtn}>
+        <p> {desc[0] + desc[1]} </p>
+        <button>
+          Show More
+        </button>
+        </div>
 
     </div>
   );

@@ -9,6 +9,7 @@
         font-family: 'Merriweather Sans', sans-serif;
         color: var(--dim-light);
     }
+
 }
 
 .imgHold {
@@ -48,5 +49,26 @@
 
 .svgCalander {
     height:1.4em;
-    color: var(--dim);
+    color: var(--dim-slate);
+}
+
+.descNbtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        text-align: center;
+    }
+
+    button {
+        background-color: var(--dim-slate);
+        color: var(--back) ;
+        border: none;
+        padding: 2px 8px;
+
+        &:hover {
+            cursor: pointer;
+            outline: 3px solid var(--slate);
+        }
+    }
 }
