@@ -2,7 +2,8 @@ import styles from './Footer.module.scss'
 
 const Footer = () => {
   return (
-   <div>
+   <div className={styles.main}>
+     <span>© 2022 Tumons Blog</span>
    </div>
   )
 }
