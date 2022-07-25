@@ -24,6 +24,7 @@
     bottom: 0;
     font-size: 5em;
     transition: var(--transition);
+    padding: 0 0.1em;
 
     &:hover {
         cursor: pointer;
@@ -47,6 +48,7 @@
     bottom: 0;
     font-size: 5em;
     transition: var(--transition);
+    padding: 0 0.1em;
 
     @include screen.devices(mobile) {
         display: flex;
