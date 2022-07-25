@@ -19,7 +19,7 @@ export default function Home({posts,category}) {
 
       <div className={styles.MainContNrecentPost}>
         <ShowPost posts={showPost} />
-       <div className={styles.Card}>
+       <div className={styles.Cards}>
        <RecentPosts posts={recentPost} />
         <Category category={category} />
        </div>

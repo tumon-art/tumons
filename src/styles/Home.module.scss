@@ -13,7 +13,7 @@
 
 .MainContNrecentPost {
   display: block;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 5em 0;
   position: relative;
 
@@ -22,7 +22,7 @@
   }
 }
 
-.Card {
+.Cards {
   display: flex;
   height: 800px;
   flex-direction: column;
