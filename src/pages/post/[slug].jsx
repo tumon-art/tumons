@@ -1,4 +1,5 @@
 import { client } from '../../lib/client'
+import OnePost from '../../components/OnePost/OnePost'
 
 export default function Post({post}) {
 
@@ -6,7 +7,7 @@ export default function Post({post}) {
 
   return (
     <>
-      Slug
+    <OnePost post={post}/>
     </>
   )
 }
