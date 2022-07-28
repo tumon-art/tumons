@@ -1,7 +1,7 @@
 import { client } from '../lib/client'
 import styles from '../styles/Home.module.scss'
 import PostCarousel from '../components/PostCarousel/PostCarousel';
-import ShowPost from '../components/Post/ShowPost';
+import ShowPost from '../components/AllPost/ShowPost';
 import RecentPosts from '../components/RecentPosts/RecentPosts';
 import Category from '../components/CategoryCard/Category';
 

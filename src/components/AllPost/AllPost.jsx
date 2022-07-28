@@ -1,14 +1,15 @@
 import Img from "next/image";
 import moment from "moment";
+import Link from 'next/link'
 import { useNextSanityImage } from "next-sanity-image";
-import styles from "./Post.module.scss";
+import styles from "./AllPost.module.scss";
 import { client } from "../../lib/client";
 
-const Post = ({ post }) => {
+
+const AllPost = ({ post }) => {
   const { mainImage, title, author ,_updatedAt} = post;
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
   const imageAuthor = useNextSanityImage(client, author.image.asset._ref);
-
   const desc = post.body[0].children[0].text.split('.')
   const time = moment(_updatedAt).format('ll')
 
@@ -18,10 +19,12 @@ const Post = ({ post }) => {
         <Img {...imageProps} layout="responsive" />
       </div>
 
-      <h3>{title}</h3>
+    <Link href={`/post/${post.slug.current}`}>
+      <a>  <h3>{title}</h3> </a>
+      </Link>
 
       <div className={styles.authorInfo}>
-       
+
         <span>
         <div className={styles.imgHoldAuthor}>
           <Img {...imageAuthor} objectFit='contain' />
@@ -50,7 +53,7 @@ const Post = ({ post }) => {
         <p>{time}</p>
         </span>
 
-        
+
       </div>
         
         <div className={styles.descNbtn}>
@@ -63,4 +66,5 @@ const Post = ({ post }) => {
     </div>
   );
 };
-export default Post;
+
+export default AllPost
