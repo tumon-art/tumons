@@ -2,7 +2,6 @@
 
 .main {
     color: var(--lighttest);
-    padding: 0 1em;
     font-family: 'Secular One', sans-serif;
 
     word-break: keep-all;
@@ -14,4 +13,17 @@
         font-size: 1.4em;
         line-height: 1.6em;
     }
+
+    @include screen.devices(tablet){
+        padding: 0 10em 0 1em;
+    }
+
+    @include screen.devices(desktop){
+        padding: 0 20em 0 1em;
+    }
+}
+
+.imgHold {
+    filter: blur(2px);
+
 }

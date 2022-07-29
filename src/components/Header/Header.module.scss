@@ -41,7 +41,7 @@
         color: var(--dim-slate);
         cursor: pointer;
     }
-    @include screen.devices(mobile) {
+    @include screen.devices(tablet) {
         display: none;
     }
 
