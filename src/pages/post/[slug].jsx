@@ -3,8 +3,6 @@ import OnePost from '../../components/OnePost/OnePost'
 
 export default function Post({post}) {
 
-  console.log(post)
-
   return (
     <>
     <OnePost post={post}/>

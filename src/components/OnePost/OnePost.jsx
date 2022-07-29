@@ -1,12 +1,21 @@
 import { useNextSanityImage } from 'next-sanity-image'
 import { client } from '../../lib/client'
 import styles from './OnePost.module.scss'
-
 const OnePost = ({post}) => {
-  const {body} = post
-  const post = body.map(body => body.children.map(child => child.text).join(''))
+  const {body, title, mainImage} = post
+
+  // IMAGE PROPS 
+  const imageProps = useNextSanityImage(
+    client,
+    mainImage.asset._ref
+  );
+
+  const p = body.map(body => body.children.map(child => child.text).join(''))
+  console.log(imageProps)
   return (
-    <div>
+    <div className={styles.main}>
+      <h1> {title} </h1>
+      <p> {p} </p>
     </div>
   )
 }

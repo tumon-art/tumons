@@ -1,0 +1,17 @@
+@use '../../styles/screen';
+
+.main {
+    color: var(--lighttest);
+    padding: 0 1em;
+    font-family: 'Secular One', sans-serif;
+
+    word-break: keep-all;
+    @include screen.devices(mobile){
+        padding: 0 0.2em;
+    }
+
+    p {
+        font-size: 1.4em;
+        line-height: 1.6em;
+    }
+}
