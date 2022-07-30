@@ -6,11 +6,11 @@
 
     word-break: keep-all;
     @include screen.devices(mobile){
-        padding: 0 0.2em;
+        padding: 0 0.5em;
     }
 
     p {
-        font-size: 1.4em;
+        font-size: 1.2em;
         line-height: 1.6em;
     }
 

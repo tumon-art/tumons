@@ -1,15 +1,16 @@
 @use  '../../styles/screen';
 
 .main {
-    margin-bottom: 2em;
+        margin-bottom: 2em;
     background-color: var(--light-back);
     border-radius: var(--low-redius);
     padding: 1.2em;
 
     h3 {
-        padding: 0 2em;
-        font-size: 1.4em;
+        padding: 0 0em;
+        font-size: 1.1em;
         color: var(--dim-light);
+        font-family: 'Secular One', sans-serif;
     }
 
 }
@@ -58,6 +59,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    font-family: 'Secular One', sans-serif;
     p {
         text-align: left;
         font-size: 1.1rem;

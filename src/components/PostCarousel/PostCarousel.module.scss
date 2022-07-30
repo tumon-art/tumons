@@ -4,7 +4,7 @@
     position: relative;
     overflow: hidden;
 
-    @include screen.devices(mobile) {
+    @include screen.devices(tablet) {
         box-shadow: inset;
         border-radius: 13px 13px;
         padding: 1em;
@@ -31,7 +31,7 @@
         color: var(--dim-light);
     }
 
-    @include screen.devices(mobile) {
+    @include screen.devices(tablet) {
         display: flex;
     }
 }
@@ -50,7 +50,7 @@
     transition: var(--transition);
     padding: 0 0.1em;
 
-    @include screen.devices(mobile) {
+    @include screen.devices(tablet) {
         display: flex;
     }
 

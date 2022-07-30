@@ -6,7 +6,7 @@
     border-radius: var(--low-redius);
     height: 240px;
 
-    @include screen.devices(mobile){
+    @include screen.devices(tablet){
         width: 300px;
     }
 
@@ -15,11 +15,13 @@
         color: var(--dim-light);
         font-weight: 600;
         font-size: 1.6em;
+
     }
 
     p {
         color: var(--dim-light);
-        font-size: 1.2em;
+        font-size: 1em;
         font-weight: 500;
+        font-family: 'Secular One', sans-serif;
     }
 }
