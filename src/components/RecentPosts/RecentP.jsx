@@ -8,7 +8,6 @@ const RecentP = ({post}) => {
   const { mainImage, title,_updatedAt} = post;
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
   const time = moment(_updatedAt).format("l")
-  console.log(post)
   return (
    <div className={styles.main}>
 
