@@ -16,7 +16,7 @@
         width: 0;
     }
 
-    @include screen.devices(mobile) {
+    @include screen.devices(tablet) {
         width: 0;
     }
 }

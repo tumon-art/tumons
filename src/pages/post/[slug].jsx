@@ -1,13 +1,12 @@
-import { client } from '../../lib/client'
-import OnePost from '../../components/OnePost/OnePost'
+import { client } from "../../lib/client";
+import OnePost from "../../components/OnePost/OnePost";
 
-export default function Post({post}) {
-
+export default function Post({ post, category }) {
   return (
     <>
-    <OnePost post={post}/>
+      <OnePost post={post} category={category} />
     </>
-  )
+  );
 }
 
 export const getStaticPaths = async () => {
@@ -15,31 +14,42 @@ export const getStaticPaths = async () => {
     slug {
         current
     }
-  }`
+  }`;
 
   const allPaths = await client.fetch(query);
 
-  const paths = allPaths.map(e => {
+  const paths = allPaths.map((e) => {
     return {
       params: {
-        slug: e.slug.current
-      }
-    }
+        slug: e.slug.current,
+      },
+    };
   });
   return {
     paths,
-    fallback: 'blocking'
-  }
-}
+    fallback: "blocking",
+  };
+};
 
-export const getStaticProps = async ({ params  }) => {
-
+export const getStaticProps = async ({ params }) => {
   // QUERY
   const onePost = `*[_type == 'post' && slug.current == '${params.slug}'][0]`;
 
   // POST
   const post = await client.fetch(onePost);
+
+  // CATEGORY
+  const categoryQuery = `*[_type == "category"]`;
+  const cat = await client.fetch(categoryQuery);
+  const category = cat.filter((cat) => {
+    return cat._id == post.categories[0]._ref;
+  });
+
+  console.log(category);
   return {
-    props: {post:post}
-  }
-}
+    props: {
+      post: post,
+      category: category,
+    },
+  };
+};

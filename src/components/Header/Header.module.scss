@@ -28,6 +28,11 @@
         50% {transform: rotate(-10deg);}
         100% {transform: rotate(10deg);}
     }
+
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .svgSideBar {

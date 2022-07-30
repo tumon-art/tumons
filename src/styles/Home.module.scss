@@ -6,18 +6,17 @@
   font-family: monospace;
   text-rendering: optimizeLegibility;
 
-  @include screen.devices(mobile){
+  @include screen.devices(tablet){
     padding: 0 2rem;
   }
 }
 
 .MainContNrecentPost {
-  display: block;
   justify-content: space-around;
   margin: 5em 0;
   position: relative;
 
-  @include screen.devices(mobile){
+  @include screen.devices(tablet){
     display: flex;
   }
 }
