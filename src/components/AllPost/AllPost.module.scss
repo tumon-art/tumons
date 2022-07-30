@@ -1,89 +1,88 @@
-@use  '../../styles/screen';
+@use "../../styles/screen";
 
 .main {
-        margin-bottom: 2em;
-    background-color: var(--light-back);
-    border-radius: var(--low-redius);
-    padding: 1.2em;
+  margin-bottom: 2em;
+  background-color: var(--light-back);
+  border-radius: var(--low-redius);
+  padding: 1.2em;
 
-    h3 {
-        padding: 0 0em;
-        font-size: 1.1em;
-        color: var(--dim-light);
-        font-family: 'Secular One', sans-serif;
-    }
-
+  h3 {
+    padding: 0 0em;
+    font-size: 1.1em;
+    color: var(--dim-light);
+    font-family: "Secular One", sans-serif;
+  }
 }
 
 .imgHold {
-    position: relative;
-    max-height: 220px;
-    width: 100%;
-    filter: blur(2px);
-    background-color: var(--dim);
-    overflow: hidden;
-    color: var(--slate);
+  position: relative;
+  max-height: 220px;
+  width: 100%;
+  filter: blur(2px);
+  background-color: var(--dim);
+  overflow: hidden;
+  color: var(--slate);
 }
 
 .authorInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--dim);
-    font-weight: 700;
-    gap: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dim);
+  font-weight: 700;
+  gap: 3em;
 
-    span {
+  span {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5em;
-    }
+  }
 }
 
 .imgHoldAuthor {
-    position: relative;
-    width:1.4em;
-    height: 1.4em;
-    border-radius: 50%;
-    background-color: var(--dim);
-    
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background-color: var(--dim);
 }
 
 .svgCalander {
-    height:1.4em;
-    color: var(--dim-slate);
+  height: 1.4em;
+  color: var(--dim-slate);
 }
 
 .descNbtn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    font-family: 'Secular One', sans-serif;
-    p {
-        text-align: left;
-        font-size: 1.1rem;
-        margin: 1rem 0;
-        color: var(--dim);
-        
+  font-family: "Secular One", sans-serif;
+  p {
+    text-align: left;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: var(--dim);
 
-        @include screen.devices(tablet){
-            padding: 0 6em;
-        }
+    @include screen.devices(tablet) {
+      padding: 0 6em;
     }
+  }
 
-    button {
-        background-color: var(--dim-slate);
-        color: var(--back) ;
-        border: none;
-        padding: 5px 18px;
-        border-radius: 20px;
-        transition: var(--transition);
+  button {
+    background-color: var(--dim-slate);
+    color: var(--back);
+    border: none;
+    padding: 5px 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: var(--transition);
 
-        &:hover {
-            cursor: pointer;
-            background: var(--slate);
-        }
+    &:hover {
+      cursor: pointer;
+      background: var(--ash-dim);
+      color: var(--dim-light);
     }
+  }
 }
