@@ -1,5 +1,6 @@
 import styles from "./Card.module.scss";
 import Img from "next/image";
+import Link from "next/link";
 import moment from "moment";
 import { useNextSanityImage } from "next-sanity-image";
 
@@ -16,8 +17,11 @@ const Card = ({ post }) => {
   return (
     <div className={styles.main}>
       <p> {time} </p>
-      <h3> {title}</h3>
-
+      <Link href={post.slug.current}>
+        <a>
+          <h4> {title}</h4>
+        </a>
+      </Link>
       <footer>
         <div className={styles.imgHold}>
           <Img {...imageProps} layout="responsive" />

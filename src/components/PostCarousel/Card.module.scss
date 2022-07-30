@@ -1,44 +1,44 @@
 .main {
-    min-width: 200px;
-    min-height: 200px;
-    border-radius: var(--low-redius);
-    background-color: var(--light-back);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--dim);
-    position: relative;
-    // border: 5px solid var(--ash-dim);
+  min-width: 200px;
+  min-height: 200px;
+  border-radius: var(--low-redius);
+  background-color: var(--light-back);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--dim);
+  position: relative;
+  // border: 5px solid var(--ash-dim);
 
-    p {
-        text-align: center;
-        font-size: 0.8rem;
-    }
-    h3 {
-        text-align: center;
-        word-wrap: break-word;
-        padding: 0 1rem;
-        margin: 0.5em 0;
-        
-    }
-    
-    footer {
-        font-size: 0.9rem;
-        display: flex;
-        gap: 0.8rem;
-        align-items: center;
-        position: absolute;
-        bottom: 5px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
+  p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  h4 {
+    font-family: "Secular One", sans-serif;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 0 1rem;
+    margin: 0.5em 0;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 .imgHold {
-    position: relative;
-    width: 20px;
-    border-radius: 50%;
-    background-color: var(--dim);
-    overflow: hidden;
-    color: var(--slate);
+  position: relative;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--dim);
+  overflow: hidden;
+  color: var(--slate);
 }
