@@ -2,11 +2,11 @@ import { useNextSanityImage } from "next-sanity-image";
 import Img from "next/image";
 import { client } from "../../lib/client";
 import styles from "./OnePost.module.scss";
+import moment from "moment";
 
 const OnePost = ({ post, category }) => {
-  const { body, title, mainImage } = post;
-
-  console.log(post.author)
+  const { body, title, mainImage, _updatedAt } = post;
+  const time = moment(_updatedAt).format("ll");
 
   // IMAGE PROPS
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
@@ -24,9 +24,11 @@ const OnePost = ({ post, category }) => {
         <Img {...imageProps} layout="responsive" />
       </div>
 
-      <span> # {category[0].title} </span>
+      <span>
+        <span># {category[0].title}</span>
+        <span> {time} </span>
+      </span>
       <p> {p} </p>
-
     </div>
   );
 };

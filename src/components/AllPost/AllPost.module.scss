@@ -44,8 +44,19 @@
   position: relative;
   width: 1.4em;
   height: 1.4em;
+  overflow: hidden;
   border-radius: 50%;
   background-color: var(--dim);
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1.4em;
+    width: 1.4em;
+    left: 0px;
+    opacity: 20%;
+    background: var(--dim-slate);
+  }
 }
 
 .svgCalander {

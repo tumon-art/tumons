@@ -1,31 +1,37 @@
 .main {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 .ImgNtitleHold {
+  display: flex;
+  justify-content: left;
+  gap: 1em;
+  align-items: center;
+  div {
+    overflow: auto;
+  }
+  span {
     display: flex;
-    justify-content: left;
-    gap: 1em;
+    justify-content: center;
     align-items: center;
-
-    span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  }
+}
+.imgHold {
+  max-height: 3em;
+  max-width: 3em;
 }
 
 .time {
-    margin: 0 0 0 0;
-    color: var(--dim);
+  margin: 0 0 0 0;
+  color: var(--dim);
 }
 .title {
-    margin: 0;
-    color: var(--dim-light);
-    font-size: 1em;
-    font-weight: 700;
-    font-family: 'Secular One', sans-serif;
-    &:hover {
-        color: var(--dim-slate);
-        cursor: pointer;
-    }
+  margin: 0;
+  color: var(--dim-light);
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "Secular One", sans-serif;
+  &:hover {
+    color: var(--dim-slate);
+    cursor: pointer;
+  }
 }

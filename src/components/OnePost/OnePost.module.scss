@@ -1,37 +1,38 @@
-@use '../../styles/screen';
+@use "../../styles/screen";
 
 .main {
-    color: var(--lighttest);
-    font-family: 'Secular One', sans-serif;
+  color: var(--lighttest);
+  font-family: "Secular One", sans-serif;
 
-    word-break: keep-all;
-    @include screen.devices(mobile){
-        padding: 0 0.5em;
-    }
+  word-break: keep-all;
+  @include screen.devices(mobile) {
+    padding: 0 0.5em;
+  }
 
-    p {
-        font-size: 1.2em;
-        line-height: 1.6em;
-    }
+  p {
+    padding: 0 0 0 0.1em;
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
 
-    @include screen.devices(tablet){
-        padding: 0 10em 0 1em;
-    }
+  @include screen.devices(tablet) {
+    padding: 0 10em 0 1em;
+  }
 
-    @include screen.devices(desktop){
-        padding: 0 20em 0 1em;
-    }
+  @include screen.devices(desktop) {
+    padding: 0 20em 0 1em;
+  }
 
-    span {
-        display: block;
-        color: var(--slate);
-        text-align: right;
-        font-size: 1.2rem;
-        padding: 0.2em 0.3em 0 0;
-    }
+  span {
+    display: flex;
+    justify-content: space-between;
+    color: var(--slate);
+    text-align: right;
+    font-size: 1.2rem;
+    padding: 0.1em 0.1em;
+  }
 }
 
 .imgHold {
-    filter: blur(2px);
-
+  filter: blur(2px);
 }
