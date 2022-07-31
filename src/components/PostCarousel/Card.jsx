@@ -17,11 +17,13 @@ const Card = ({ post }) => {
   return (
     <div className={styles.main}>
       <p> {time} </p>
+
       <Link href={post.slug.current}>
         <a>
           <h4> {title}</h4>
         </a>
       </Link>
+
       <footer>
         <div className={styles.imgHold}>
           <Img {...imageProps} layout="responsive" />

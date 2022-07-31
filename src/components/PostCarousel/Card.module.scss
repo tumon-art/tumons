@@ -8,11 +8,15 @@
   justify-content: center;
   color: var(--dim);
   position: relative;
-  // border: 5px solid var(--ash-dim);
 
   p {
     text-align: center;
     font-size: 0.8rem;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
   h4 {
     font-family: "Secular One", sans-serif;
@@ -44,5 +48,17 @@
   border-radius: 50%;
   background-color: var(--dim);
   overflow: hidden;
+  opacity: 60%;
+  //filter: grayscale(1);
   color: var(--slate);
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 0px;
+    opacity: 40%;
+    background: var(--dim-slate);
+  }
 }
