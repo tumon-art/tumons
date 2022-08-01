@@ -3,9 +3,10 @@ import Img from "next/image";
 import { client } from "../../lib/client";
 import styles from "./OnePost.module.scss";
 import moment from "moment";
+import ReactPlayer from "react-player";
 
 const OnePost = ({ post, category }) => {
-  const { body, title, mainImage, _updatedAt } = post;
+  const { body, title, mainImage, url, _updatedAt } = post;
   const time = moment(_updatedAt).format("ll");
 
   // IMAGE PROPS
@@ -19,9 +20,24 @@ const OnePost = ({ post, category }) => {
     <div className={styles.main}>
       <h1> {title} </h1>
 
-      <span></span>
       <div className={styles.imgHold}>
         <Img {...imageProps} layout="responsive" />
+      </div>
+
+      <div
+        className={styles.reactPlayer}
+        style={{
+          display: "flex",
+          padding: " 50px 0 20px 0",
+          justifyContent: "center",
+        }}
+      >
+        <ReactPlayer
+          height="230px"
+          width="400px"
+          controls={true}
+          url={post.url}
+        />
       </div>
 
       <span>
