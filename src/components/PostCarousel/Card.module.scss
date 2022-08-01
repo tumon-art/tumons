@@ -44,12 +44,12 @@
 
 .imgHold {
   position: relative;
-  width: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: var(--dim);
   overflow: hidden;
   opacity: 70%;
-  //filter: grayscale(1);
   color: var(--slate);
 
   &::after {
