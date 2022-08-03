@@ -3,7 +3,7 @@ import useStore from "../../store/mainStore";
 import NavLinks from "../NavLinks/NavLinks";
 import Sidebar from "../Sidebar/Sidebar";
 import styles from "./Header.module.scss";
-import Link from 'next/link'
+import Link from "next/link";
 
 const Header = () => {
   const sidebar = useStore((state) => state.sidebar);
@@ -66,7 +66,7 @@ const Header = () => {
     <>
       <div className={styles.head}>
         <div>
-          <Link href='/'>
+          <Link href="/">
             <a>
               <svg
                 className={styles.svgCode}
