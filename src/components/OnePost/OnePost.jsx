@@ -12,14 +12,19 @@ const OnePost = ({ post, category }) => {
   // IMAGE PROPS
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
 
-  const p = body.map((body) =>
-    body.children.map((child) => child.text).join("")
-  );
+  console.log(body.filter((e) => e._type == "code"));
+  const p = body.map((arr) => {
+    let post;
+    if (arr._type == "block") {
+      post += arr.children.map((child) => child.text).join("");
+    }
+
+    return post;
+  });
 
   return (
     <div className={styles.main}>
       <h1> {title} </h1>
-
       <div className={styles.imgHold}>
         <Img {...imageProps} layout="responsive" />
       </div>
