@@ -4,6 +4,7 @@ import { client } from "../../lib/client";
 import styles from "./OnePost.module.scss";
 import moment from "moment";
 import ReactPlayer from "react-player";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 const OnePost = ({ post, category }) => {
   const { body, title, mainImage, url, _updatedAt } = post;
@@ -12,14 +13,19 @@ const OnePost = ({ post, category }) => {
   // IMAGE PROPS
   const imageProps = useNextSanityImage(client, mainImage.asset._ref);
 
-  console.log(body.filter((e) => e._type == "code"));
+  // CODE BLOCK
+  const code = body.filter((e) => e._type == "code");
+  // POST TEXT
   const p = body.map((arr) => {
     let post;
     if (arr._type == "block") {
       post += arr.children.map((child) => child.text).join("");
-    }
+    } else
+      return (
+        <CopyBlock language="javascript" text={arr.code} theme={dracula} />
+      );
 
-    return post;
+    if (post) return post;
   });
 
   return (
