@@ -9,10 +9,8 @@ import useStore from "../store/mainStore";
 export default function Home({ posts }) {
   // ZUSTAND
   const whiceCat = useStore((state) => state.whiceCat);
-  const setWhiceCat = useStore((state) => state.setWhiceCat);
+  // const setWhiceCat = useStore((state) => state.setWhiceCat);
 
-  setTimeout(() => setWhiceCat("Linux"), 5000);
-  console.log(whiceCat);
   const recentPost = posts.slice(0, 3);
 
   const showPost = posts.filter((arr) => {
@@ -20,7 +18,6 @@ export default function Home({ posts }) {
     else return arr.categories[0].title == whiceCat;
   });
 
-  showPost.slice(0, 4);
   return (
     <>
       <div className={styles.container}>
@@ -29,7 +26,7 @@ export default function Home({ posts }) {
         </div>
 
         <div className={styles.MainContNrecentPost}>
-          <ShowPost posts={showPost} />
+          <ShowPost posts={showPost.slice(0, 4)} />
           <div className={styles.Cards}>
             <RecentPosts posts={recentPost} />
             <Category post={posts} />
