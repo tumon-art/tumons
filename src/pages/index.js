@@ -4,19 +4,23 @@ import PostCarousel from "../components/PostCarousel/PostCarousel";
 import ShowPost from "../components/AllPost/ShowPost";
 import RecentPosts from "../components/RecentPosts/RecentPosts";
 import Category from "../components/CategoryCard/Category";
+import useStore from "../store/mainStore";
 
 export default function Home({ posts }) {
-  const recentPost = posts.slice(0, 3);
-  // ALL POST TO SHOW IN HOME
-  const showPost = posts.slice(0, 4);
+  // ZUSTAND
+  const whiceCat = useStore((state) => state.whiceCat);
+  const setWhiceCat = useStore((state) => state.setWhiceCat);
 
-  // GET CATEGORY
-  const LinuxPosts = posts.filter((arr) => {
-    return arr.categories[0].title == "Linux";
+  setTimeout(() => setWhiceCat("Linux"), 5000);
+  console.log(whiceCat);
+  const recentPost = posts.slice(0, 3);
+
+  const showPost = posts.filter((arr) => {
+    if (whiceCat == "Home") return arr;
+    else return arr.categories[0].title == whiceCat;
   });
 
-  console.log(LinuxPosts);
-  // console.log(posts[0].categories[0].title);
+  showPost.slice(0, 4);
   return (
     <>
       <div className={styles.container}>
