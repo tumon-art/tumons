@@ -2,6 +2,7 @@ import cssMobile from "./NavLinksM.module.scss";
 import cssDesktop from "./NavLinksD.module.scss";
 import Link from "next/link";
 import useStore from "../../store/mainStore";
+import { useEffect } from "react";
 
 const NavLinks = ({ mobile }) => {
   // ZUSTAND
@@ -10,6 +11,12 @@ const NavLinks = ({ mobile }) => {
   const sidebarSwitch = useStore((state) => state.sidebarSwitch);
 
   const styles = mobile == "mobile" ? cssMobile : cssDesktop;
+
+  useEffect(() => {
+    if (sidebar === true) {
+      document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
+    } else document.getElementsByTagName("BODY")[0].style.overflow = "auto";
+  }, [sidebar]);
 
   return (
     <div className={styles.main}>
