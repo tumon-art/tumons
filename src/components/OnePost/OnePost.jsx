@@ -22,7 +22,14 @@ const OnePost = ({ post, category }) => {
       return arr.children.map((child) => child.text).join("");
     } else
       return (
-        <CopyBlock language="javascript" text={arr.code} theme={dracula} />
+        <div style={{ padding: "30px 0px" }}>
+          <CopyBlock
+            language="javascript"
+            text={arr.code}
+            theme={dracula}
+            codeBlock
+          />
+        </div>
       );
   });
 
