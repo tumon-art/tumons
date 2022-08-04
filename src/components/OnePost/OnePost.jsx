@@ -15,17 +15,15 @@ const OnePost = ({ post, category }) => {
 
   // CODE BLOCK
   const code = body.filter((e) => e._type == "code");
+
   // POST TEXT
   const p = body.map((arr) => {
-    let post;
     if (arr._type == "block") {
-      post += arr.children.map((child) => child.text).join("");
+      return arr.children.map((child) => child.text).join("");
     } else
       return (
         <CopyBlock language="javascript" text={arr.code} theme={dracula} />
       );
-
-    if (post) return post;
   });
 
   return (
@@ -34,6 +32,11 @@ const OnePost = ({ post, category }) => {
       <div className={styles.imgHold}>
         <Img {...imageProps} layout="responsive" />
       </div>
+
+      <span className={styles.span}>
+        <span># {category[0].title}</span>
+        <span> {time} </span>
+      </span>
 
       <div
         className={styles.reactPlayer}
@@ -51,10 +54,6 @@ const OnePost = ({ post, category }) => {
         />
       </div>
 
-      <span>
-        <span># {category[0].title}</span>
-        <span> {time} </span>
-      </span>
       <p> {p} </p>
     </div>
   );
