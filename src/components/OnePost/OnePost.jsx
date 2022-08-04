@@ -18,6 +18,7 @@ const OnePost = ({ post, category }) => {
 
   // POST TEXT
   const p = body.map((arr) => {
+    // Check BLOCK || CODE
     if (arr._type == "block") {
       return arr.children.map((child) => child.text).join("");
     } else

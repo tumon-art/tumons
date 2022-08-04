@@ -7,12 +7,11 @@ import { useNextSanityImage } from "next-sanity-image";
 import { client } from "../../lib/client";
 
 const Card = ({ post }) => {
+  // IMAGE PROPS
   const imageProps = useNextSanityImage(client, post.author.image.asset._ref);
 
   const { title, _updatedAt, author } = post;
-
   const time = moment(_updatedAt).format("ll");
-  console.log(post);
 
   return (
     <div className={styles.main}>
