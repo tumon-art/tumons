@@ -36,7 +36,6 @@ const OnePost = ({ post, category }) => {
 
   return (
     <div className={styles.main}>
-      <h1> {title} </h1>
       <div className={styles.imgHold}>
         <Img {...imageProps} layout="responsive" />
       </div>
@@ -45,7 +44,7 @@ const OnePost = ({ post, category }) => {
         <span># {category[0].title}</span>
         <span> {time} </span>
       </span>
-
+      <h1> {title} </h1>
       <div
         className={styles.reactPlayer}
         style={{
@@ -63,6 +62,28 @@ const OnePost = ({ post, category }) => {
       </div>
 
       <p> {p} </p>
+
+      <hr className={styles.hr} />
+
+      <form className={styles.form}>
+        <lable>
+          <span> Name</span>
+        </lable>
+        <input placeholder="name" type="text" />
+        <label>
+          <span> Email </span>
+          <input placeholder="Email" type="text" />
+        </label>
+
+        <lable>
+          <span> Comment </span>
+          <textarea
+            style={{ display: "block" }}
+            placeholder="Comment"
+            rows="8"
+          />
+        </lable>
+      </form>
     </div>
   );
 };
