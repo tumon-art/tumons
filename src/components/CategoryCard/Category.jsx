@@ -4,9 +4,11 @@ const Category = ({ post }) => {
   return (
     <div className={styles.main}>
       <h3> Category</h3>
-      {post.slice(0, 4).map((e, i) => (
-        <p key={i}> {e.categories[0].title} </p>
-      ))}
+      <ol>
+        {post.slice(0, 4).map((e, i) => (
+          <li key={i}> {e.categories[0].title} </li>
+        ))}
+      </ol>
     </div>
   );
 };

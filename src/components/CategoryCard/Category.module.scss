@@ -17,10 +17,20 @@
     font-size: 1.6em;
   }
 
-  p {
-    color: var(--dim-light);
+  ol {
+    padding: 0 0 0 1.6em;
+  }
+
+  li {
+    color: var(--dim-slate);
     font-size: 1em;
     font-weight: 500;
+    margin: 0.8em 0;
     font-family: "Secular One", sans-serif;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--slate);
+    }
   }
 }
