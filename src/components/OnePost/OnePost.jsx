@@ -64,20 +64,27 @@ const OnePost = ({ post, category }) => {
       <p> {p} </p>
 
       <hr className={styles.hr} />
-
+      <span className={styles.enjoyed}> enjoyed this article? </span>
+      <h2 className={styles.h2}> Leave a comment below!</h2>
+      <hr className={styles.hr2} />
       <form className={styles.form}>
         <lable>
           <span> Name</span>
         </lable>
-        <input placeholder="name" type="text" />
+        <input className={styles.inputName} placeholder="name" type="text" />
         <label>
           <span> Email </span>
-          <input placeholder="Email" type="text" />
+          <input
+            className={styles.inputEmail}
+            placeholder="Email"
+            type="text"
+          />
         </label>
 
         <lable>
           <span> Comment </span>
           <textarea
+            className={styles.textArea}
             style={{ display: "block" }}
             placeholder="Comment"
             rows="8"
