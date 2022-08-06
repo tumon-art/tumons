@@ -11,6 +11,7 @@ specifiers:
   react: 18.2.0
   react-code-blocks: 0.0.9-0
   react-dom: 18.2.0
+  react-hook-form: ^7.34.0
   react-player: ^2.10.1
   sass: ^1.53.0
   zustand: 4.0.0-rc.1
@@ -24,6 +25,7 @@ dependencies:
   react: 18.2.0
   react-code-blocks: 0.0.9-0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
+  react-hook-form: 7.34.0_react@18.2.0
   react-player: 2.10.1_react@18.2.0
   sass: 1.53.0
   zustand: 4.0.0-rc.1_react@18.2.0
@@ -2210,6 +2212,15 @@ packages:
 
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
+    dev: false
+
+  /react-hook-form/7.34.0_react@18.2.0:
+    resolution: {integrity: sha512-s0/TJ09NVlEk2JPp3yit1WnMuPNBXFmUKEQPulgDi9pYBw/ZmmAFHe6AXWq73Y+kp8ye4OcMf0Jv+i/qLPektg==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

@@ -5,19 +5,29 @@ import styles from "./OnePost.module.scss";
 import moment from "moment";
 import ReactPlayer from "react-player";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { useForm } from "react-hook-form";
 
 const OnePost = ({ post, category }) => {
-  const { body, title, mainImage, url, _updatedAt } = post;
-  const time = moment(_updatedAt).format("ll");
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
+  console.log(watch("example")); // watch input value by passing the name of it const { body, title, mainImage, url, _updatedAt } = post;
+
+  const time = moment(post._updatedAt).format("ll");
 
   // IMAGE PROPS
-  const imageProps = useNextSanityImage(client, mainImage.asset._ref);
+  const imageProps = useNextSanityImage(client, post.mainImage.asset._ref);
 
   // CODE BLOCK
-  const code = body.filter((e) => e._type == "code");
+  const code = post.body.filter((e) => e._type == "code");
 
   // POST TEXT
-  const p = body.map((arr) => {
+  const p = post.body.map((arr) => {
     // Check BLOCK || CODE
     if (arr._type == "block") {
       return arr.children.map((child) => child.text).join("");
@@ -44,7 +54,7 @@ const OnePost = ({ post, category }) => {
         <span># {category[0].title}</span>
         <span> {time} </span>
       </span>
-      <h1> {title} </h1>
+      <h1> {post.title} </h1>
       <div
         className={styles.reactPlayer}
         style={{
@@ -71,17 +81,23 @@ const OnePost = ({ post, category }) => {
 
       <hr className={styles.hr2} />
 
-      <form className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <label>
           <span> Name</span>
-          <input className={styles.inputName} placeholder="Name" type="text" />
+          <input
+            {...register("name", { required: true })}
+            className={styles.inputName}
+            placeholder="Issac Karim"
+            type="text"
+          />
         </label>
 
         <label>
           <span> Email </span>
           <input
+            {...register("email", { required: true })}
             className={styles.inputEmail}
-            placeholder="Email"
+            placeholder="you@email.com"
             type="text"
           />
         </label>
@@ -89,13 +105,16 @@ const OnePost = ({ post, category }) => {
         <label>
           <span> Comment </span>
           <textarea
+            {...register("comment", { required: true })}
             className={styles.textArea}
             style={{ display: "block" }}
-            placeholder="Comment"
+            placeholder="Enter some long form content"
             rows="8"
           />
         </label>
-
+        {errors.name && <span>Name is required</span>}
+        {errors.email && <span>Email is required</span>}
+        {errors.comment && <span>Comment is required</span>}
         <button>Submit</button>
       </form>
     </div>
