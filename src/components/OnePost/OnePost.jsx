@@ -17,7 +17,15 @@ const OnePost = ({ post, category }) => {
   } = useForm();
 
   // ON SUBMIT
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("/api/createComment", {
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then(() => console.log(data))
+      .catch((err) => console.log(err));
+  };
 
   const time = moment(post._updatedAt).format("ll");
 
@@ -83,6 +91,9 @@ const OnePost = ({ post, category }) => {
       <hr className={styles.hr2} />
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        {/* COMMENT ID */}
+        <input {...register("_id")} type="hidded" name="_id" value={post._id} />
+
         <label>
           <span> Name</span>
           <input
