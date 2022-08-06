@@ -8,15 +8,16 @@ import { CopyBlock, dracula } from "react-code-blocks";
 import { useForm } from "react-hook-form";
 
 const OnePost = ({ post, category }) => {
+  // FORM HOOK
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it const { body, title, mainImage, url, _updatedAt } = post;
+  // ON SUBMIT
+  const onSubmit = (data) => console.log(data);
 
   const time = moment(post._updatedAt).format("ll");
 
@@ -113,15 +114,15 @@ const OnePost = ({ post, category }) => {
           />
         </label>
         {errors.name && (
-          <span className={styles.errors}>Name is required !</span>
+          <span className={styles.errors}> - Name is required !</span>
         )}
         {errors.email && (
-          <span className={styles.errors}>Email is required !</span>
+          <span className={styles.errors}> - Email is required !</span>
         )}
         {errors.comment && (
-          <span className={styles.errors}>comment is required !</span>
+          <span className={styles.errors}> - Please write your comment !</span>
         )}
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
