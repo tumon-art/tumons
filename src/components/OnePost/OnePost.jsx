@@ -113,6 +113,7 @@ const OnePost = ({ post, category }) => {
             rows="8"
           />
         </label>
+
         {errors.name && (
           <span className={styles.errors}> - Name is required !</span>
         )}
@@ -122,6 +123,7 @@ const OnePost = ({ post, category }) => {
         {errors.comment && (
           <span className={styles.errors}> - Please write your comment !</span>
         )}
+
         <button type="submit">Submit</button>
       </form>
     </div>
