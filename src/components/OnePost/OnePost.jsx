@@ -112,9 +112,15 @@ const OnePost = ({ post, category }) => {
             rows="8"
           />
         </label>
-        {errors.name && <span>Name is required</span>}
-        {errors.email && <span>Email is required</span>}
-        {errors.comment && <span>Comment is required</span>}
+        {errors.name && (
+          <span className={styles.errors}>Name is required !</span>
+        )}
+        {errors.email && (
+          <span className={styles.errors}>Email is required !</span>
+        )}
+        {errors.comment && (
+          <span className={styles.errors}>comment is required !</span>
+        )}
         <button>Submit</button>
       </form>
     </div>
