@@ -64,14 +64,19 @@ const OnePost = ({ post, category }) => {
       <p> {p} </p>
 
       <hr className={styles.hr} />
+
       <span className={styles.enjoyed}> enjoyed this article? </span>
+
       <h2 className={styles.h2}> Leave a comment below!</h2>
+
       <hr className={styles.hr2} />
+
       <form className={styles.form}>
-        <lable>
+        <label>
           <span> Name</span>
-        </lable>
-        <input className={styles.inputName} placeholder="name" type="text" />
+          <input className={styles.inputName} placeholder="Name" type="text" />
+        </label>
+
         <label>
           <span> Email </span>
           <input
@@ -81,7 +86,7 @@ const OnePost = ({ post, category }) => {
           />
         </label>
 
-        <lable>
+        <label>
           <span> Comment </span>
           <textarea
             className={styles.textArea}
@@ -89,7 +94,9 @@ const OnePost = ({ post, category }) => {
             placeholder="Comment"
             rows="8"
           />
-        </lable>
+        </label>
+
+        <button>Submit</button>
       </form>
     </div>
   );
