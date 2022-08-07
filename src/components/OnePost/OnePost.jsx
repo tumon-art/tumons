@@ -10,7 +10,6 @@ import { useState } from "react";
 
 const OnePost = ({ post, category }) => {
   const [submitted, setSubmitted] = useState(false);
-
   // FORM HOOK
   const {
     register,
@@ -63,7 +62,7 @@ const OnePost = ({ post, category }) => {
         <Img {...imageProps} layout="responsive" />
       </div>
       <span className={styles.span}>
-        <span># {category[0].title}</span>
+        <span># {post.categories[0].title}</span>
         <span> {time} </span>
       </span>
       <h1> {post.title} </h1>
@@ -82,7 +81,7 @@ const OnePost = ({ post, category }) => {
           url={post.url}
         />
       </div>
-      <p> {p} </p>
+      <div> {p} </div>
       <hr className={styles.hr} />
 
       {/* ==== COMMENTS */}

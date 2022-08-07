@@ -33,7 +33,30 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   // QUERY
-  const onePost = `*[_type == 'post' && slug.current == '${params.slug}'][0]`;
+  const onePost = `*[_type == 'post' && slug.current == '${params.slug}'][0]{
+    _id,
+    url,
+    _updatedAt,
+    slug,
+    title,
+    body,
+    mainImage,
+    categories,
+    
+    author -> {
+    name,
+    image
+    },
+    
+    'comments': *[
+    _type == "comment" && 
+    post._ref == ^._id && 
+    approved == true],
+    
+    categories[] -> {
+    title
+    },
+  }`;
 
   // POST
   const post = await client.fetch(onePost);
