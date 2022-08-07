@@ -170,9 +170,21 @@
   }
 }
 
+.commentWrap {
+  margin: 0.6em 0;
+  padding: 0 0 0 0.7em;
+  border-left: 7px var(--ash-dim) solid;
+}
+
 .commentNameNDate {
   h4 {
     padding: 0;
     margin: 0;
+    font-size: clamp(1.3rem, 1.4vw, 1.7rem);
   }
+}
+
+.comment {
+  color: var(--dim-light);
+  font-size: clamp(1.2rem, 1.2vw, 1.5rem);
 }

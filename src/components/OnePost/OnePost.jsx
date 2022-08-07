@@ -161,20 +161,19 @@ const OnePost = ({ post, category }) => {
                 <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
               </svg>
             </div>
-
-            {post.comments.map((each, i) => {
-              return (
-                <div key={i}>
-                  <div className={styles.commentNameNDate}>
-                    <h4>{each.name}</h4>
-                  </div>
-                  <span>{each.comment}</span>
-                </div>
-              );
-            })}
           </div>
         </form>
       )}
+      {post.comments.map((each, i) => {
+        return (
+          <div className={styles.commentWrap} key={i}>
+            <div className={styles.commentNameNDate}>
+              <h4>{each.name}</h4>
+            </div>
+            <span className={styles.comment}>{each.comment}</span>
+          </div>
+        );
+      })}
     </div>
   );
 };
