@@ -86,7 +86,12 @@ const OnePost = ({ post, category }) => {
       <hr className={styles.hr} />
 
       {/* ==== COMMENTS */}
-      {submitted ? null : (
+      {submitted ? (
+        <div className={styles.thanksForComment}>
+          <h1>Thanks for submitting your comment!</h1>
+          <p>Once it has been approved, it will appear below!</p>
+        </div>
+      ) : (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <span className={styles.enjoyed}> enjoyed this article? </span>
 
@@ -140,10 +145,7 @@ const OnePost = ({ post, category }) => {
             <span className={styles.errors}> - Email is required !</span>
           )}
           {errors.comment && (
-            <span className={styles.errors}>
-              {" "}
-              - Please write your comment !
-            </span>
+            <span className={styles.errors}>- Please write your comment !</span>
           )}
 
           <input type="submit" className={styles.submitBtn} />
