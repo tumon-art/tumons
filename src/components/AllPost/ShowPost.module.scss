@@ -1,9 +1,9 @@
-@use '../../styles/screen';
+@use "../../styles/screen";
 
 .main {
-    width: 100%;
+  width: 100%;
 
-    @include screen.devices(tablet) {
-        width: 60%;
-    }
+  @include screen.devices(tablet) {
+    width: 60%;
+  }
 }

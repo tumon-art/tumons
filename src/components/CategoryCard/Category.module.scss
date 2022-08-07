@@ -1,10 +1,11 @@
 @use "../../styles/screen";
 
 .main {
+  border: 1px solid var(--dim-slate);
   padding: 1.2em;
+  height: 230px;
   background-color: var(--light-back);
   border-radius: var(--low-redius);
-  height: 260px;
 
   @include screen.devices(tablet) {
     width: 300px;
@@ -20,10 +21,15 @@
   ol {
     padding: 0 0 0 1.6em;
   }
+}
+.categoriesHold {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   li {
-    color: var(--dim-slate);
-    font-size: 1em;
+    color: var(--dim);
+    font-size: clamp(1rem, 1vw, 1.1rem);
     font-weight: 500;
     margin: 0.8em 0;
     font-family: "Secular One", sans-serif;
@@ -32,5 +38,11 @@
       cursor: pointer;
       color: var(--slate);
     }
+  }
+
+  svg {
+    height: 1em;
+    width: 1em;
+    margin: 0 2em 0 0;
   }
 }

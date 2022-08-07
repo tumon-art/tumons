@@ -1,5 +1,6 @@
 @use "../../styles/screen";
 .main {
+  border: 1px solid var(--dim-slate);
   padding: 1.2em;
   background-color: var(--light-back);
   border-radius: var(--low-redius);

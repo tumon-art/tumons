@@ -27,7 +27,6 @@ const NavLinks = ({ mobile }) => {
               <a
                 onClick={() => {
                   setWhiceCat("Home");
-                  sidebarSwitch();
                 }}
               >
                 Home
@@ -39,7 +38,6 @@ const NavLinks = ({ mobile }) => {
               <a
                 onClick={() => {
                   setWhiceCat("Linux");
-                  sidebarSwitch();
                 }}
               >
                 Linux

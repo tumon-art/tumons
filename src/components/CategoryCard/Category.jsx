@@ -6,7 +6,16 @@ const Category = ({ post }) => {
       <h3> Category</h3>
       <ol>
         {post.slice(0, 4).map((e, i) => (
-          <li key={i}> {e.categories[0].title} </li>
+          <div className={styles.categoriesHold} key={i}>
+            <li> {e.categories[0].title} </li>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fillRule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
         ))}
       </ol>
     </div>
