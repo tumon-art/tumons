@@ -62,7 +62,6 @@ const OnePost = ({ post, category }) => {
       <div className={styles.imgHold}>
         <Img {...imageProps} layout="responsive" />
       </div>
-
       <span className={styles.span}>
         <span># {category[0].title}</span>
         <span> {time} </span>
@@ -83,64 +82,73 @@ const OnePost = ({ post, category }) => {
           url={post.url}
         />
       </div>
-
       <p> {p} </p>
-
       <hr className={styles.hr} />
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <span className={styles.enjoyed}> enjoyed this article? </span>
+      {/* ==== COMMENTS */}
+      {submitted ? null : (
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <span className={styles.enjoyed}> enjoyed this article? </span>
 
-        <h2 className={styles.h2}> Leave a comment below!</h2>
+          <h2 className={styles.h2}> Leave a comment below!</h2>
 
-        <hr className={styles.hr2} />
+          <hr className={styles.hr2} />
 
-        {/* COMMENT ID */}
-        <input {...register("_id")} type="hidden" name="_id" value={post._id} />
-
-        <label>
-          <span> Name</span>
+          {/* COMMENT ID */}
           <input
-            {...register("name", { required: true })}
-            className={styles.inputName}
-            placeholder="Issac Karim"
-            type="text"
+            {...register("_id")}
+            type="hidden"
+            name="_id"
+            value={post._id}
           />
-        </label>
 
-        <label>
-          <span> Email </span>
-          <input
-            {...register("email", { required: true })}
-            className={styles.inputEmail}
-            placeholder="you@email.com"
-            type="text"
-          />
-        </label>
+          <label>
+            <span> Name</span>
+            <input
+              {...register("name", { required: true })}
+              className={styles.inputName}
+              placeholder="Issac Karim"
+              type="text"
+            />
+          </label>
 
-        <label>
-          <span> Comment </span>
-          <textarea
-            {...register("comment", { required: true })}
-            className={styles.textArea}
-            style={{ display: "block" }}
-            placeholder="Enter some long form content"
-            rows="8"
-          />
-        </label>
+          <label>
+            <span> Email </span>
+            <input
+              {...register("email", { required: true })}
+              className={styles.inputEmail}
+              placeholder="you@email.com"
+              type="text"
+            />
+          </label>
 
-        {errors.name && (
-          <span className={styles.errors}> - Name is required !</span>
-        )}
-        {errors.email && (
-          <span className={styles.errors}> - Email is required !</span>
-        )}
-        {errors.comment && (
-          <span className={styles.errors}> - Please write your comment !</span>
-        )}
+          <label>
+            <span> Comment </span>
+            <textarea
+              {...register("comment", { required: true })}
+              className={styles.textArea}
+              style={{ display: "block" }}
+              placeholder="Enter some long form content"
+              rows="8"
+            />
+          </label>
 
-        <input type="submit" className={styles.submitBtn} />
-      </form>
+          {errors.name && (
+            <span className={styles.errors}> - Name is required !</span>
+          )}
+          {errors.email && (
+            <span className={styles.errors}> - Email is required !</span>
+          )}
+          {errors.comment && (
+            <span className={styles.errors}>
+              {" "}
+              - Please write your comment !
+            </span>
+          )}
+
+          <input type="submit" className={styles.submitBtn} />
+        </form>
+      )}
     </div>
   );
 };

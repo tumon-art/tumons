@@ -1,19 +1,17 @@
 import { client } from "../../lib/client";
 
-export default async function handler(req, res) {
-  console.log(typeof req.body);
-  const { _id, name, email, comment } = req.body;
+export default async function comment(req, res) {
+  const { _id, name, email, comment } = JSON.parse(req.body);
   try {
     await client.create({
       _type: "comment",
       post: {
-        _type:'reference',
+        _type: "reference",
         _ref: _id,
       },
       name,
       email,
       comment,
-      
     });
   } catch (err) {
     return res.status(500).json({ message: `Couldn't Submit!!`, err });

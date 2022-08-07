@@ -1,4 +1,4 @@
-@use './screen';
+@use "./screen";
 
 :root {
   --back: #09192f;
@@ -8,16 +8,15 @@
   --lighttest: #ccd6f6;
   --dim: #8892b0;
   --dim-light: #a8b4d3;
-  --ash-dim:#43495e;
-  --fog:#05030342;
-  --transition-fast:0.1s;
-  --transition:0.1s;
+  --ash-dim: #43495e;
+  --fog: #05030342;
+  --transition-fast: 0.1s;
+  --transition: 0.1s;
   --fz-heading: 25px;
   --fz-md: 16px;
   --fz-xl: 18px;
 
-  --low-redius: 2%
-  
+  --low-redius: 2%;
 }
 
 html,
@@ -32,21 +31,21 @@ body {
     padding: 0px 50px;
   }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--light-back);
-}
+  ::-webkit-scrollbar-track {
+    background: var(--light-back);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--dim-light);
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--dim-light);
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 a {
@@ -57,5 +56,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-
