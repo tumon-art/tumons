@@ -1,4 +1,4 @@
-@use './screen';
+@use "./screen";
 
 .container {
   padding: 0 0.4rem;
@@ -6,7 +6,7 @@
   font-family: monospace;
   text-rendering: optimizeLegibility;
 
-  @include screen.devices(tablet){
+  @include screen.devices(tablet) {
     padding: 0 2rem;
   }
 }
@@ -16,7 +16,7 @@
   margin: 5em 0;
   position: relative;
 
-  @include screen.devices(tablet){
+  @include screen.devices(tablet) {
     display: flex;
   }
 }
@@ -28,5 +28,5 @@
   row-gap: 2em;
   position: -webkit-sticky;
   position: sticky;
-  top:0;
+  top: 5em;
 }
