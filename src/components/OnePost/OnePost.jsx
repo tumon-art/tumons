@@ -18,9 +18,11 @@ const OnePost = ({ post, category }) => {
 
   // ON SUBMIT
   const onSubmit = (data) => {
-    console.log(data);
     fetch("/api/createComment", {
       method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
       body: JSON.stringify(data),
     })
       .then(() => console.log(data))
@@ -36,13 +38,13 @@ const OnePost = ({ post, category }) => {
   const code = post.body.filter((e) => e._type == "code");
 
   // POST TEXT
-  const p = post.body.map((arr) => {
+  const p = post.body.map((arr, i) => {
     // Check BLOCK || CODE
     if (arr._type == "block") {
       return arr.children.map((child) => child.text).join("");
     } else
       return (
-        <div style={{ padding: "30px 0px" }}>
+        <div key={i} style={{ padding: "30px 0px" }}>
           <CopyBlock
             language="javascript"
             text={arr.code}
