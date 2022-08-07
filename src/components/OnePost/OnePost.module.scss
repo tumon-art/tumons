@@ -150,3 +150,29 @@
     }
   }
 }
+
+.commentHold {
+  margin: 2em 0em;
+}
+
+.commentHead {
+  display: flex;
+
+  svg {
+    height: 2em;
+    width: 2em;
+    margin: 0 0 0 0.3em;
+    color: var(--slate);
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.commentNameNDate {
+  h4 {
+    padding: 0;
+    margin: 0;
+  }
+}
