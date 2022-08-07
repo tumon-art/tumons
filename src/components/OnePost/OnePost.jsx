@@ -6,13 +6,15 @@ import moment from "moment";
 import ReactPlayer from "react-player";
 import { CopyBlock, dracula } from "react-code-blocks";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const OnePost = ({ post, category }) => {
+  const [submitted, setSubmitted] = useState(false);
+
   // FORM HOOK
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -20,13 +22,13 @@ const OnePost = ({ post, category }) => {
   const onSubmit = (data) => {
     fetch("/api/createComment", {
       method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-    },
       body: JSON.stringify(data),
     })
-      .then(() => console.log(data))
-      .catch((err) => console.log(err));
+      .then(() => setSubmitted(true))
+      .catch((err) => {
+        console.log(err);
+        setSubmitted(false);
+      });
   };
 
   const time = moment(post._updatedAt).format("ll");
@@ -86,15 +88,15 @@ const OnePost = ({ post, category }) => {
 
       <hr className={styles.hr} />
 
-      <span className={styles.enjoyed}> enjoyed this article? </span>
-
-      <h2 className={styles.h2}> Leave a comment below!</h2>
-
-      <hr className={styles.hr2} />
-
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <span className={styles.enjoyed}> enjoyed this article? </span>
+
+        <h2 className={styles.h2}> Leave a comment below!</h2>
+
+        <hr className={styles.hr2} />
+
         {/* COMMENT ID */}
-        <input {...register("_id")} type="hidded" name="_id" value={post._id} />
+        <input {...register("_id")} type="hidden" name="_id" value={post._id} />
 
         <label>
           <span> Name</span>
@@ -137,7 +139,7 @@ const OnePost = ({ post, category }) => {
           <span className={styles.errors}> - Please write your comment !</span>
         )}
 
-        <button type="submit">Submit</button>
+        <input type="submit" className={styles.submitBtn} />
       </form>
     </div>
   );

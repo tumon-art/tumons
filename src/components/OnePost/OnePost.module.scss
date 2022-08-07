@@ -42,8 +42,6 @@
 }
 .form {
   margin: 2em 0;
-  display: flex;
-  flex-direction: column;
   color: var(--dim-slate);
 
   label {
@@ -78,20 +76,6 @@
     }
   }
 
-  button {
-    background: var(--dim-slate);
-    border: none;
-    color: back;
-    font-weight: 600;
-    padding: 8px 0;
-    border-radius: 4px 4px;
-    margin: 10px 0 0 0;
-
-    &:hover {
-      background: var(--slate);
-      cursor: pointer;
-    }
-  }
   @include screen.devices(desktop) {
     width: 50%;
   }
@@ -106,6 +90,7 @@
 .h2 {
   font-family: "Secular One", sans-serif;
   margin: 0em 0 0.3em 0;
+  color: var(--dim);
 }
 
 .hr2 {
@@ -117,4 +102,18 @@
   color: var(--dim);
 }
 .submitBtn {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 5px 5px;
+  padding: 8px 0;
+  color: var(--back);
+  background: var(--dim-slate);
+  border: none;
+  transition: var(--transition);
+  margin: 1em 0 0 0;
+  &:hover {
+    background: var(--dim);
+    cursor: pointer;
+  }
 }
