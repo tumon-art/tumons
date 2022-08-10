@@ -1,0 +1,21 @@
+@use "./screen";
+
+.MainContNrecentPost {
+  justify-content: space-around;
+  margin: 5em 0;
+  position: relative;
+
+  @include screen.devices(tablet) {
+    display: flex;
+  }
+}
+
+.Cards {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  row-gap: 2em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5em;
+}

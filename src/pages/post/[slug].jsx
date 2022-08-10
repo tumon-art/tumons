@@ -1,11 +1,15 @@
 import { client } from "../../lib/client";
 import OnePost from "../../components/OnePost/OnePost";
+import styles from "../../styles/Post.module.scss";
+import RecentPost from "../../components/RecentPosts/RecentPosts";
 
 export default function Post({ post, category }) {
   return (
-    <>
+    <div className={styles.MainContNrecentPost}>
       <OnePost post={post} category={category} />
-    </>
+
+      <div className={styles.Cards}>{/* <RecentPost/> */}</div>
+    </div>
   );
 }
 
@@ -68,11 +72,11 @@ export const getStaticProps = async ({ params }) => {
     return cat._id == post.categories[0]._ref;
   });
 
-  console.log(category);
   return {
     props: {
       post: post,
       category: category,
     },
+    revalidate: 10,
   };
 };
