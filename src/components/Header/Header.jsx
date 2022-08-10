@@ -8,6 +8,7 @@ import Link from "next/link";
 const Header = () => {
   const sidebar = useStore((state) => state.sidebar);
   const sidebarSwitch = useStore((state) => state.sidebarSwitch);
+  const setSidebar = useStore((state) => state.setSidebar);
 
   // SIDEBAR TOOGLE ICON ANIM.
   useEffect(() => {
@@ -27,7 +28,6 @@ const Header = () => {
   const svgToOpen = () => (
     <svg
       className={styles.svgSideBar}
-      onClick={sidebarSwitch}
       id="svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -47,7 +47,6 @@ const Header = () => {
   const svgToClose = () => (
     <svg
       className={styles.svgSideBar}
-      onClick={sidebarSwitch}
       id="svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -90,7 +89,9 @@ const Header = () => {
         {/* === SHOW/HIDE SIDEBAR ICON */}
         <div>
           <Sidebar />
-          {sidebar ? svgToOpen() : svgToClose()}
+          <div id="toggle" onClick={() => sidebarSwitch()}>
+            {sidebar ? svgToOpen() : svgToClose()}
+          </div>
           <NavLinks />
         </div>
       </div>
