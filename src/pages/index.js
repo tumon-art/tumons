@@ -27,6 +27,7 @@ export default function Home({ posts }) {
   // ON TOUCH START
   const onTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
+    if (window || sidebar) setSidebar(false);
   };
 
   // ON TOUCH MOVE
@@ -41,7 +42,6 @@ export default function Home({ posts }) {
     const leftSwipe = distance > 50;
     const rightSwipe = distance < -50;
 
-    if (leftSwipe) setSidebar(true);
     if (rightSwipe) setSidebar(false);
   };
 
