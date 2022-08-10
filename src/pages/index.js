@@ -39,8 +39,9 @@ export default function Home({ posts }) {
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
-    const leftSwipe = distance > 50;
+    // const leftSwipe = distance > 50;
     const rightSwipe = distance < -50;
+    console.log(distance);
 
     if (rightSwipe) setSidebar(false);
   };
