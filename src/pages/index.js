@@ -10,6 +10,7 @@ import useStore from "../store/mainStore";
 export default function Home({ posts }) {
   // ZUSTAND
   const whiceCat = useStore((state) => state.whiceCat);
+  const setSidebar = useStore((state) => state.setSidebar);
 
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -25,17 +26,23 @@ export default function Home({ posts }) {
 
   // ON TOUCH START
   const onTouchStart = (e) => {
-    console.log("start", e.targetTouches[0].clientX);
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
   // ON TOUCH MOVE
   const onTouchMove = (e) => {
-    console.log(e.targetTouches[0].clientX);
+    setTouchEnd(e.targetTouches[0].clientX);
   };
 
   // ON TOUCH END
   const onTouchEnd = () => {
-    console.log("end");
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const leftSwipe = distance > 50;
+    const rightSwipe = distance < -50;
+
+    if (leftSwipe) setSidebar(true);
+    if (rightSwipe) setSidebar(false);
   };
 
   return (
