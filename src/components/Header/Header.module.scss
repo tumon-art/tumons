@@ -13,10 +13,6 @@
   z-index: 10;
   transition: 0.8s transform;
   top: 0px;
-
-  @include screen.devices(mobile) {
-    padding: 0 2rem;
-  }
 }
 
 .svgCode {

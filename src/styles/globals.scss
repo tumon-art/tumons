@@ -27,10 +27,6 @@ body {
   font-family: monospace;
   // font-family: 'Secular One', sans-serif;
 
-  @include screen.devices(desktop) {
-    padding: 0px 50px;
-  }
-
   ::-webkit-scrollbar {
     width: 10px;
   }

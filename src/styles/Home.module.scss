@@ -9,6 +9,10 @@
   @include screen.devices(tablet) {
     padding: 0 2rem;
   }
+
+  @include screen.devices(desktop) {
+    padding: 110px 70px 0 70px;
+  }
 }
 
 .MainContNrecentPost {
