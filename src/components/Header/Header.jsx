@@ -11,7 +11,7 @@ const Header = () => {
   const setSidebar = useStore((state) => state.setSidebar);
 
   const [position, setPosition] = useState();
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => setPosition(window.scrollY), []);
 

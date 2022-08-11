@@ -3,8 +3,12 @@ import cssDesktop from "./NavLinksD.module.scss";
 import Link from "next/link";
 import useStore from "../../store/mainStore";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const NavLinks = ({ mobile }) => {
+  const router = useRouter();
+
+  console.log(router.asPath !== "/");
   // ZUSTAND
   const setWhiceCat = useStore((state) => state.setWhiceCat);
   const sidebar = useStore((state) => state.sidebar);
@@ -23,26 +27,47 @@ const NavLinks = ({ mobile }) => {
       <nav className={styles.nav}>
         <ol className={styles.ol}>
           <li>
-            <Link href="/">
-              <a
+            {router.asPath !== "/" ? (
+              <Link href="/">
+                <a
+                  onClick={() => {
+                    setWhiceCat("Home");
+                  }}
+                >
+                  Home
+                </a>
+              </Link>
+            ) : (
+              <div
                 onClick={() => {
                   setWhiceCat("Home");
                 }}
               >
                 Home
-              </a>
-            </Link>
+              </div>
+            )}
           </li>
+
           <li>
-            <Link href="/">
-              <a
+            {router.asPath !== "/" ? (
+              <Link href="/">
+                <a
+                  onClick={() => {
+                    setWhiceCat("Linux");
+                  }}
+                >
+                  Linux
+                </a>
+              </Link>
+            ) : (
+              <div
                 onClick={() => {
                   setWhiceCat("Linux");
                 }}
               >
                 Linux
-              </a>
-            </Link>
+              </div>
+            )}
           </li>
           <li>Text</li>
           <li>Text</li>
