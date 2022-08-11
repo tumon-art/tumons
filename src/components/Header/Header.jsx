@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useStore from "../../store/mainStore";
 import NavLinks from "../NavLinks/NavLinks";
 import Sidebar from "../Sidebar/Sidebar";
@@ -10,6 +10,27 @@ const Header = () => {
   const sidebarSwitch = useStore((state) => state.sidebarSwitch);
   const setSidebar = useStore((state) => state.setSidebar);
 
+  const [position, setPosition] = useState();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => setPosition(window.scrollY), []);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      let moving = window.scrollY;
+
+      setVisible(position > moving);
+      setPosition(moving);
+    };
+
+    let head = document.getElementById("head");
+
+    if (visible == true) head.style.transform = "translateY(0px)";
+    else head.style.transform = "translateY(-100px)";
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
   // SIDEBAR TOOGLE ICON ANIM.
   useEffect(() => {
     if (sidebar === true) {
@@ -63,7 +84,7 @@ const Header = () => {
 
   return (
     <>
-      <div className={styles.head}>
+      <div id="head" className={styles.head}>
         <div>
           <Link href="/">
             <a>

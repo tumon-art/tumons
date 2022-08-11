@@ -1,14 +1,18 @@
 @use "../../styles/_screen";
 
 .head {
-  padding: 0 2rem;
+  padding: 0 25px;
   height: 70px;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(10, 25, 47, 0.795);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 10;
   transition: 0.8s transform;
-  border-bottom: 2px solid var(--light-back);
-  margin-bottom: 30px;
+  top: 0px;
 
   @include screen.devices(mobile) {
     padding: 0 2rem;
