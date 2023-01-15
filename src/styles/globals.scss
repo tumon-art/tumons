@@ -52,3 +52,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: -30px; // adjust with logo height
+  margin: 0 auto;
+}
